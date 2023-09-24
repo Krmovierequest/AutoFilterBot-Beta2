@@ -116,7 +116,7 @@ async def start(client, message):
                 file_caption=file.caption
             )   
             btn = [[
-                InlineKeyboardButton("⚡️Join Our Backup Channel⚡️", url=https://t.me/krbackup")
+                InlineKeyboardButton("⚡️Join Our Backup Channel⚡️", url='https://t.me/krbackup')
             ]]
             await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -140,7 +140,7 @@ async def start(client, message):
         file_caption=files.caption
     )
     btn = [[
-        InlineKeyboardButton("⚡️Join Our Backup Channel⚡️", url=https://t.me/krbackup")
+        InlineKeyboardButton("⚡️Join Our Backup Channel⚡️", url='https://t.me/krbackup')
     ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
