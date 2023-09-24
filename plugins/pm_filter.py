@@ -137,7 +137,7 @@ async def next_page(bot, query):
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("🎈 Send All 🎈", url=await get_shortlink(query.message.chat.id, f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{pre}_{key}'))]
+            [InlineKeyboardButton("", url='https://t.me/krbackup'))]
         )
     else:
         btn = [
@@ -149,7 +149,7 @@ async def next_page(bot, query):
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("🎈 Send All 🎈", callback_data=f"send_all#{pre}#{key}")]
+            [InlineKeyboardButton("", url='https://t.me/krbackup")]
         )
     btn.insert(0,
         [InlineKeyboardButton("📍 ʜᴏᴡ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋ 📍", url=settings['tutorial'])]
@@ -405,12 +405,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
 
     elif query.data == "instructions":
-        await query.answer("Movie request format.\nExample:\nBlack Adam or Black Adam 2022\n\nTV Reries request format.\nExample:\nLoki S01E01 or Loki S01 E01\n\nDon't use symbols.", show_alert=True)
+        await query.answer("Movie request format.\nExample:\nBlack Adam or Black Adam 2022\n\nTV Reries request format.\nExample:\nLoki S01E01 or Loki S01E01\n\nDon't use symbols.", show_alert=True)
 
     elif query.data == "start":
         await query.answer('Welcome!')
         buttons = [[
-            InlineKeyboardButton("+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +", url=f'http://t.me/{temp.U_NAME}?startgroup=start')
+            InlineKeyboardButton("★Join Our Backup Channel★", url='https://t.me/krbackup')
         ],[
             InlineKeyboardButton('ᴏᴡɴᴇʀ', callback_data='my_owner'),
             InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='my_about')
@@ -437,7 +437,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "my_owner":
         buttons = [[
             InlineKeyboardButton('🏠 Home 🏠', callback_data='start'),
-            InlineKeyboardButton('Contact', url='https://t.me/Hansaka_Anuhas')
+            InlineKeyboardButton('Contact', url='https://t.me/kdbhaiadmin')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -450,7 +450,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('‼️ ʜᴏᴡ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ sʜᴏʀᴛɴᴇʀ ‼️', callback_data='howshort')
         ],[
             InlineKeyboardButton('≼ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('💬 ʜᴇʟᴘ', url="https://telegram.me/SL_Bots_Support"),
+            InlineKeyboardButton('💬 ʜᴇʟᴘ', url="https://telegram.me/kdbhaiadmin"),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -488,7 +488,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         title = query.message.chat.title
         settings = await get_settings(grpid)
         btn = [[
-            InlineKeyboardButton("⚡️ Go To Chat ⚡️", url=f"https://t.me/{temp.U_NAME}")
+            InlineKeyboardButton("⚡️ Go To Chat ⚡️", url=f"https://t.me/{temp.U_NAME")
         ]]
 
         if settings is not None:
@@ -801,7 +801,7 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("🎈 Send All 🎈", url=await get_shortlink(message.chat.id, f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{pre}_{key}'))]
+            [InlineKeyboardButton("", url=await get_shortlink(message.chat.id, f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{pre}_{key}'))]
         )
     else:
         btn = [
@@ -813,7 +813,7 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("🎈 Send All 🎈", callback_data=f"send_all#{pre}#{key}")]
+            [InlineKeyboardButton("", callback_data=f"send_all#{pre}#{key}")]
         )
     btn.insert(0,
         [InlineKeyboardButton("📍 ʜᴏᴡ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋ 📍", url=settings['tutorial'])]
@@ -871,7 +871,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"✅ I Found: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>"
+        cap = f"✅ Your Movie: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Join Backup Channel👉: <b>@krbackup</b>"
     if imdb and imdb.get('poster'):
         try:
             if settings["auto_delete"]:
