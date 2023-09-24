@@ -131,7 +131,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"✨ {get_size(file.file_size)} ⚡️ {file.file_name}", url=await get_shortlink(query.message.chat.id, f'https://t.me/{temp.U_NAME}?start={pre}_{query.message.chat.id}_{file.file_id}')
+                    text=f"✨{get_size(file.file_size)}⚡️{file.file_name}", url=await get_shortlink(query.message.chat.id, f'https://t.me/{temp.U_NAME}?start={pre}_{query.message.chat.id}_{file.file_id}')
                 )
             ]
             for file in files
@@ -143,7 +143,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"✨ {get_size(file.file_size)} ⚡️ {file.file_name}", callback_data=f'{pre}#{file.file_id}',
+                    text=f"✨{get_size(file.file_size)}⚡️{file.file_name}", callback_data=f'{pre}#{file.file_id}',
                 )
             ]
             for file in files
@@ -169,14 +169,14 @@ async def next_page(bot, query):
                                   callback_data="buttons")]
         )
         btn.append(
-            [InlineKeyboardButton("❌ Close ❌", callback_data="close_data")]
+            [InlineKeyboardButton("", callback_data="close_data")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 PAGES {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="buttons"),
              InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
         btn.append(
-            [InlineKeyboardButton("❌ Close ❌", callback_data="close_data")])
+            [InlineKeyboardButton("", callback_data="close_data")])
     else:
         btn.append(
             [
@@ -187,7 +187,7 @@ async def next_page(bot, query):
         )
         btn.append(
             [
-                InlineKeyboardButton("❌ Close ❌", callback_data="close_data")
+                InlineKeyboardButton("", callback_data="close_data")
             ]
         )
     try:
