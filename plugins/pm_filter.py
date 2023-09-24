@@ -149,7 +149,7 @@ async def next_page(bot, query):
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("", url='https://t.me/krbackup")]
+            [InlineKeyboardButton("", url='https://t.me/krbackup')]
         )
     btn.insert(0,
         [InlineKeyboardButton("📍 ʜᴏᴡ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋ 📍", url=settings['tutorial'])]
